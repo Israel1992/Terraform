@@ -7,12 +7,13 @@ terraform {
       version = "~> 5.0"
     }
   }
-
+/*
   backend "s3" {
     bucket = "terraform-test4"
     key    = "terraform"
     region = "us-east-2"
   }
+  */
   
 }
 
