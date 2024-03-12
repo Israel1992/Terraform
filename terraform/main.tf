@@ -1,5 +1,4 @@
 
-
 terraform {
   required_providers {
     aws = {
@@ -7,14 +6,12 @@ terraform {
       version = "~> 5.0"
     }
   }
-/*
+
   backend "s3" {
-    bucket = "terraform-test4"
+    bucket = "terraform-manual496733258422"
     key    = "terraform"
-    region = "us-east-2"
+    region = "${var.region}"
   }
-  */
-  
 }
 
 
@@ -22,16 +19,12 @@ provider "aws" {
       region     = "${var.region}"
 }
 
-resource "aws_s3_bucket" "this" {
-  bucket                               = "${var.bucket_name}"
-  force_destroy                        = "${var.force_destroy}"
-}
-
-resource "aws_s3_bucket" "example" {
-  bucket = "prueba-terraform666"
+#Este bucket debe iniciar la ami generada con mi packer
+resource "aws_s3_bucket" "test" {
+  bucket = "prueba-496733258422"
 
   tags = {
-    Name        = "TEST"
+    Name        = "prueba-496733258422"
     Environment = "Dev"
   }
 }
