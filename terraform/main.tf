@@ -1,3 +1,4 @@
+#En la instancia manual debemos instalar terraform, packer, git y el bucket S3
 
 terraform {
   required_providers {
@@ -10,13 +11,13 @@ terraform {
   backend "s3" {
     bucket = "terraform-manual496733258422"
     key    = "terraform"
-    region = "${var.region}"
+    region = "us-east-1"
   }
 }
 
 
 provider "aws" {
-      region     = "${var.region}"
+      region     = "us-east-1"
 }
 
 #Este bucket debe iniciar la ami generada con mi packer
