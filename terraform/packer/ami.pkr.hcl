@@ -1,5 +1,3 @@
-//AWS Packer Builder 
-
 packer {
   required_plugins {
     amazon = {
